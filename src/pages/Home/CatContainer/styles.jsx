@@ -6,7 +6,7 @@ export const Container = styled(Card)`
   flex-direction: column;
   align-items: center;
   width: 225px;
-  height: 250px;
+  height: 270px;
 `;
 
 export const Image = styled.img`

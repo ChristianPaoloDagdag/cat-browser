@@ -8,6 +8,7 @@ import Home from './pages/Home';
 export default function App() {
   const { setBreedList } = useContext(Context);
 
+  /* Get the list of breeds */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -19,6 +20,7 @@ export default function App() {
             },
           },
         );
+        /* Set the list of breeds to the select */
         setBreedList(response.data);
       } catch (e) {
         console.log(e);
