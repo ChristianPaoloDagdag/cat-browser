@@ -48,7 +48,7 @@ export default function Home() {
   const catsListOutput = (
     <S.CatListContainer>
       {catsList.map((cat) => (
-        <CatContainer id={cat.id} image={cat.url} />
+        <CatContainer cat={cat} key={cat.id} />
       ))}
     </S.CatListContainer>
   );
@@ -79,7 +79,7 @@ export default function Home() {
     <S.Container>
       <h1>Cat Browser</h1>
       <h5>Select a Breed</h5>
-      <BreedSelect />
+      <BreedSelect setItemLimit={setItemLimit} />
       {hideAlertBanner}
       {catListAvailability}
       {showLoadMore}
