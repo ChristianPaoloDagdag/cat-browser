@@ -5,11 +5,17 @@ export const Context = createContext();
 export function ContextProvider(props) {
   const { children } = props;
 
-  const [breedList, setBreedList] = useState([123]);
+  const [breedList, setBreedList] = useState([]);
+  const [selectBreed, setSelectBreed] = useState();
 
   const contextValue = useMemo(
-    () => ({ breedList, setBreedList }),
-    [breedList, setBreedList],
+    () => ({
+      breedList,
+      setBreedList,
+      selectBreed,
+      setSelectBreed,
+    }),
+    [breedList, setBreedList, selectBreed, setSelectBreed],
   );
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
