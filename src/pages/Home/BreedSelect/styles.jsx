@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import Form from 'react-bootstrap/Form';
 
-export const CustomSelect = styled(Form.Select)`
-  width: 200px;
+const CustomSelect = styled(Form.Select)`
+  width: 240px;
 `;
 
 export default CustomSelect;

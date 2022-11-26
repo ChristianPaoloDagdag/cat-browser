@@ -1,11 +1,16 @@
-import React, { createContext, useMemo } from 'react';
+import React, { createContext, useMemo, useState } from 'react';
 
 export const Context = createContext();
 
 export function ContextProvider(props) {
   const { children } = props;
 
-  const contextValue = useMemo(() => ({ }), []);
+  const [breedList, setBreedList] = useState([123]);
+
+  const contextValue = useMemo(
+    () => ({ breedList, setBreedList }),
+    [breedList, setBreedList],
+  );
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 }
