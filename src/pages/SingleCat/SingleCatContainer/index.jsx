@@ -9,7 +9,6 @@ export default function SingleCatContainer(props) {
   const { image } = props;
 
   const { selectBreed, setSelectBreed } = useContext(Context);
-  console.log('selectbreed', selectBreed);
 
   const navigate = useNavigate();
 

@@ -8,11 +8,11 @@ export default function SingleCat() {
 
   /* Get catInformation from handleView */
   const {
-    breeds,
-    height,
-    id,
-    url,
     width,
+    url,
+    id,
+    height,
+    breeds,
   } = location.state.catInformation;
   console.log(breeds, height, id, url, width);
 

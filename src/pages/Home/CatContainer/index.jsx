@@ -6,13 +6,11 @@ import routes from '../../../constants/routes';
 
 export default function CatContainer(props) {
   const { cat } = props;
-  console.log('catcontainer', cat);
 
   const navigate = useNavigate();
 
   /* Reroute the user to the single cat page, pass information, no need for another query */
   const handleViewDetails = (catInformation) => {
-    console.log('handleviewdetails', catInformation);
     navigate(routes.SINGLE_CAT, {
       state: { catInformation },
     });
