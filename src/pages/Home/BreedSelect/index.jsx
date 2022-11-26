@@ -7,7 +7,7 @@ import CustomSelect from './styles';
 
 export default function BreedSelect(props) {
   const { setItemLimit } = props;
-  const { breedList, setSelectBreed } = useContext(Context);
+  const { breedList, selectBreed, setSelectBreed } = useContext(Context);
 
   /* Save the selected breed for rendering */
   const handleSetSelectBreed = (e) => {
@@ -23,7 +23,7 @@ export default function BreedSelect(props) {
   ));
 
   return (
-    <CustomSelect onChange={handleSetSelectBreed}>
+    <CustomSelect onChange={handleSetSelectBreed} defaultValue={selectBreed}>
       <option defaultValue value="">
         Select a breed
       </option>

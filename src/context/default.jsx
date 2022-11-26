@@ -11,12 +11,12 @@ export function ContextProvider(props) {
 
   const contextValue = useMemo(
     () => ({
-      breedList,
-      setBreedList,
-      selectBreed,
       setSelectBreed,
-      alertBannerOpen,
+      setBreedList,
       setAlertBannerOpen,
+      selectBreed,
+      breedList,
+      alertBannerOpen,
     }),
     [breedList, setBreedList, selectBreed, setSelectBreed, alertBannerOpen, setAlertBannerOpen],
   );
