@@ -38,13 +38,27 @@ export default function Home() {
         }
       };
       fetchData();
+    } else {
+      setCatsList([]);
+      setCatsListCount(0);
     }
   }, [itemLimit, selectBreed]);
 
   /* Outputs the list of cats */
-  const catsListOutput = catsList.map((cat) => (
-    <CatContainer id={cat.id} image={cat.url} />
-  ));
+  const catsListOutput = (
+    <S.CatListContainer>
+      {catsList.map((cat) => (
+        <CatContainer id={cat.id} image={cat.url} />
+      ))}
+    </S.CatListContainer>
+  );
+
+  /* Shows no cats are avaialable when where are no cats */
+  const catListAvailability = catsListCount === 0 ? (
+    <S.NoCatsContainer>No cats available</S.NoCatsContainer>
+  ) : (
+    catsListOutput
+  );
 
   /* Responsible for loading more cats */
   const handleLoadMore = () => {
@@ -63,7 +77,7 @@ export default function Home() {
       <h1>Cat Browser</h1>
       <h5>Select a Breed</h5>
       <BreedSelect />
-      <S.CatListContainer>{catsListOutput}</S.CatListContainer>
+      {catListAvailability}
       {showLoadMore}
     </S.Container>
   );
