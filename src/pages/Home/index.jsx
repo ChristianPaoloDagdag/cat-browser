@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
 import ItemListCount from '../../constants/ItemListCount';
 import { Context } from '../../context/default';
 import BreedSelect from './BreedSelect';
@@ -54,7 +55,7 @@ export default function Home() {
   /* Responsible for displaying the Load More button */
   /* Desc: If the the list of cats displayed is equal to the set limit, there is more to load */
   const showLoadMore = catsListCount === itemLimit && (
-    <S.LoadMoreButton onClick={handleLoadMore}>Load More</S.LoadMoreButton>
+    <Button onClick={handleLoadMore}>Load More</Button>
   );
 
   return (

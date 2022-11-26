@@ -6,7 +6,7 @@ export default function CatContainer(props) {
 
   return (
     <S.Container>
-      <S.Image src={image} key={id} alt={id} />
+      <S.Image src={image} key={id} alt=" " />
     </S.Container>
   );
 }
