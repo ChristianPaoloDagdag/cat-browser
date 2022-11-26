@@ -1,7 +1,6 @@
 import React from 'react';
+import BreedSelect from './BreedSelect';
 
 export default function Home() {
-  return (
-    <div>Home</div>
-  );
+  return <div><BreedSelect /></div>;
 }
