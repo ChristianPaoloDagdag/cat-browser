@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import AlertBanner from '../../components/AlertBanner';
-import ItemListCount from '../../constants/ItemListCount';
+import DefaultItemListCount from '../../constants/DefaultItemListCount';
 import { Context } from '../../context/default';
 import BreedSelect from './BreedSelect';
 import CatContainer from './CatContainer';
@@ -14,7 +14,7 @@ export default function Home() {
 
   const [catsList, setCatsList] = useState([]);
   const [catsListCount, setCatsListCount] = useState(0);
-  const [itemLimit, setItemLimit] = useState(ItemListCount);
+  const [itemLimit, setItemLimit] = useState(DefaultItemListCount);
 
   /* Get request for the cats list */
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Home() {
 
   /* Responsible for loading more cats */
   const handleLoadMore = () => {
-    const newItemLimit = itemLimit + ItemListCount;
+    const newItemLimit = itemLimit + DefaultItemListCount;
     setItemLimit(newItemLimit);
   };
 

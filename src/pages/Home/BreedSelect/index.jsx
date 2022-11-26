@@ -1,15 +1,18 @@
 import React, { useContext } from 'react';
+import DefaultItemListCount from '../../../constants/DefaultItemListCount';
 
 import { Context } from '../../../context/default';
 
 import CustomSelect from './styles';
 
-export default function BreedSelect() {
+export default function BreedSelect(props) {
+  const { setItemLimit } = props;
   const { breedList, setSelectBreed } = useContext(Context);
 
   /* Save the selected breed for rendering */
   const handleSetSelectBreed = (e) => {
     setSelectBreed(e.target.value);
+    setItemLimit(DefaultItemListCount);
   };
 
   /* Set the options based on the list of breeds */
