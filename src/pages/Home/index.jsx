@@ -1,12 +1,15 @@
 import axios from 'axios';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/default';
 import BreedSelect from './BreedSelect';
+import CatContainer from './CatContainer';
 
-import Container from './styles';
+import * as S from './styles';
 
 export default function Home() {
-  const { selectBreed, setSelectBreed } = useContext(Context);
+  const { selectBreed } = useContext(Context);
+
+  const [catsList, setCatsList] = useState([]);
 
   useEffect(() => {
     if (selectBreed !== '') {
@@ -20,7 +23,7 @@ export default function Home() {
               },
             },
           );
-          setSelectBreed(response.data);
+          setCatsList(response.data);
         } catch (e) {
           console.log(e);
           /* TODO: Implement error handling */
@@ -30,11 +33,14 @@ export default function Home() {
     }
   }, [selectBreed]);
 
+  const catsListOutput = catsList.map((cat) => <CatContainer id={cat.id} image={cat.url} />);
+
   return (
-    <Container>
+    <S.Container>
       <h1>Cat Browser</h1>
       <h5>Breed</h5>
       <BreedSelect />
-    </Container>
+      <S.CatListContainer>{catsListOutput}</S.CatListContainer>
+    </S.Container>
   );
 }
