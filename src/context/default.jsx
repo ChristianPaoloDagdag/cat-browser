@@ -7,6 +7,7 @@ export function ContextProvider(props) {
 
   const [breedList, setBreedList] = useState([]);
   const [selectBreed, setSelectBreed] = useState('');
+  const [alertBannerOpen, setAlertBannerOpen] = useState(false);
 
   const contextValue = useMemo(
     () => ({
@@ -14,8 +15,10 @@ export function ContextProvider(props) {
       setBreedList,
       selectBreed,
       setSelectBreed,
+      alertBannerOpen,
+      setAlertBannerOpen,
     }),
-    [breedList, setBreedList, selectBreed, setSelectBreed],
+    [breedList, setBreedList, selectBreed, setSelectBreed, alertBannerOpen, setAlertBannerOpen],
   );
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

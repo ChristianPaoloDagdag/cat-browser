@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import AlertBanner from '../../components/AlertBanner';
 import ItemListCount from '../../constants/ItemListCount';
 import { Context } from '../../context/default';
 import BreedSelect from './BreedSelect';
@@ -9,7 +10,7 @@ import CatContainer from './CatContainer';
 import * as S from './styles';
 
 export default function Home() {
-  const { selectBreed } = useContext(Context);
+  const { selectBreed, alertBannerOpen, setAlertBannerOpen } = useContext(Context);
 
   const [catsList, setCatsList] = useState([]);
   const [catsListCount, setCatsListCount] = useState(0);
@@ -33,8 +34,7 @@ export default function Home() {
           /* Set howmany was returned by the get request */
           setCatsListCount(response.data.length);
         } catch (e) {
-          console.log(e);
-          /* TODO: Implement error handling */
+          setAlertBannerOpen(true);
         }
       };
       fetchData();
@@ -53,18 +53,18 @@ export default function Home() {
     </S.CatListContainer>
   );
 
-  /* Shows no cats are avaialable when where are no cats */
-  const catListAvailability = catsListCount === 0 ? (
-    <S.NoCatsContainer>No cats available</S.NoCatsContainer>
-  ) : (
-    catsListOutput
-  );
-
   /* Responsible for loading more cats */
   const handleLoadMore = () => {
     const newItemLimit = itemLimit + ItemListCount;
     setItemLimit(newItemLimit);
   };
+
+  /* Shows no cats are avaialable */
+  const catListAvailability = catsListCount === 0 ? (
+    <S.NoCatsContainer>No cats available</S.NoCatsContainer>
+  ) : (
+    catsListOutput
+  );
 
   /* Responsible for displaying the Load More button */
   /* Desc: If the the list of cats displayed is equal to the set limit, there is more to load */
@@ -72,11 +72,15 @@ export default function Home() {
     <Button onClick={handleLoadMore}>Load More</Button>
   );
 
+  /* Shows and hides the Alert Banner */
+  const hideAlertBanner = alertBannerOpen === true && <AlertBanner />;
+
   return (
     <S.Container>
       <h1>Cat Browser</h1>
       <h5>Select a Breed</h5>
       <BreedSelect />
+      {hideAlertBanner}
       {catListAvailability}
       {showLoadMore}
     </S.Container>

@@ -6,7 +6,7 @@ import { Context } from './context/default';
 import Home from './pages/Home';
 
 export default function App() {
-  const { setBreedList } = useContext(Context);
+  const { setBreedList, setAlertBannerOpen } = useContext(Context);
 
   /* Get the list of breeds */
   useEffect(() => {
@@ -23,8 +23,7 @@ export default function App() {
         /* Set the list of breeds to the select */
         setBreedList(response.data);
       } catch (e) {
-        console.log(e);
-        /* TODO: Implement error handling */
+        setAlertBannerOpen(true);
       }
     };
     fetchData();
