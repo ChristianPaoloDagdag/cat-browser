@@ -16,7 +16,7 @@ export default function BreedSelect(props) {
   };
 
   /* Set the options based on the list of breeds */
-  const selectOptions = breedList?.map((breed) => (
+  const selectOptions = breedList.map((breed) => (
     <option value={breed.id} key={breed.id}>
       {breed.name}
     </option>

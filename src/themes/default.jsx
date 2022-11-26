@@ -4,6 +4,9 @@ const defaultTheme = {
     medium: '(min-width: 833px)',
     large: '(min-width: 1093px)',
   },
+  color: {
+    offWhite: 'rgb(0,0,0,.03)',
+  },
 };
 
 export default defaultTheme;

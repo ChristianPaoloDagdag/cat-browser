@@ -6,6 +6,7 @@ export const Container = styled(Card)`
   flex-direction: column;
   align-items: center;
   width: 225px;
+  background-color: ${(props) => props.theme.color.offWhite};
 `;
 
 export const Image = styled.img`
