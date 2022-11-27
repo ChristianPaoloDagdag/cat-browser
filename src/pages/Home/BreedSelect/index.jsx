@@ -7,10 +7,17 @@ import CustomSelect from './styles';
 
 export default function BreedSelect(props) {
   const { setItemLimit } = props;
-  const { breedList, selectBreed, setSelectBreed } = useContext(Context);
+
+  const {
+    breedList,
+    selectBreed,
+    setSelectBreed,
+    setAlertBannerOpen,
+  } = useContext(Context);
 
   /* Save the selected breed for rendering */
   const handleSetSelectBreed = (e) => {
+    setAlertBannerOpen(false);
     setSelectBreed(e.target.value);
     setItemLimit(DefaultItemListCount);
   };
