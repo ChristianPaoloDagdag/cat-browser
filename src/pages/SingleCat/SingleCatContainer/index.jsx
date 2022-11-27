@@ -19,7 +19,7 @@ export default function SingleCatContainer(props) {
   };
 
   /* Return the breed information */
-  const breedInformation = breeds.map(
+  const breedInformation = breeds?.map(
     ({
       description,
       name,

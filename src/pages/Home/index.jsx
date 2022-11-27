@@ -47,7 +47,7 @@ export default function Home() {
   /* Outputs the list of cats */
   const catsListOutput = (
     <S.CatListContainer>
-      {catsList.map((cat) => (
+      {catsList?.map((cat) => (
         <CatContainer cat={cat} key={cat.id} />
       ))}
     </S.CatListContainer>
