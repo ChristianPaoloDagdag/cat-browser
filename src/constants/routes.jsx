@@ -1,6 +1,6 @@
 const routes = {
-  SINGLE_CAT: '/single-cat',
   HOME: '/',
+  SINGLE_CAT: '/single-cat',
 };
 
 export default routes;

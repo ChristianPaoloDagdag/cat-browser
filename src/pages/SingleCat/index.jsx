@@ -7,16 +7,7 @@ export default function SingleCat() {
   const location = useLocation();
 
   /* Get catInformation from handleView */
-  const {
-    width,
-    url,
-    id,
-    height,
-    breeds,
-  } = location.state.catInformation;
-  console.log(breeds, height, id, url, width);
-
-  console.log('breeds single cat', breeds);
+  const { breeds, url } = location.state.catInformation;
 
   return <Container><SingleCatContainer image={url} breeds={breeds} /></Container>;
 }

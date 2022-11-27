@@ -1,18 +1,18 @@
-import styled from 'styled-components';
 import Card from 'react-bootstrap/Card';
+import styled from 'styled-components';
 
 export const Container = styled(Card)`
-  width: 1100px;
-  flex-direction: column;
-  display: flex;
   background-color: ${(props) => props.theme.color.offWhite};
+  display: flex;
+  flex-direction: column;
+  width: 1100px;
 `;
 
 export const BackButtonContainer = styled.div`
-  padding: 15px;
-  height: 61px;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 61px;
+  padding: 15px;
 `;
 
 export const Image = styled.img`
@@ -20,9 +20,8 @@ export const Image = styled.img`
 `;
 
 export const InformationContainer = styled.div`
-  padding: 20px 15px;
-  height: 224px;
-  flex-direction: column;
   display: flex;
-  background-color: pink;
+  flex-direction: column;
+  min-height: 224px;
+  padding: 20px 15px;
 `;

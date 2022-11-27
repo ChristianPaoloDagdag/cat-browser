@@ -6,18 +6,36 @@ import routes from '../../../constants/routes';
 import { Context } from '../../../context/default';
 
 export default function SingleCatContainer(props) {
-  const { image, breeds } = props;
+  const { breeds, image } = props;
 
   const { selectBreed, setSelectBreed } = useContext(Context);
 
   const navigate = useNavigate();
 
-  console.log('breeds', breeds);
-
   const handleBack = () => {
     setSelectBreed(selectBreed);
     navigate(routes.HOME);
   };
+
+  const breedInformation = breeds.map(
+    ({
+      description,
+      name,
+      origin,
+      temperament,
+    }) => (
+      <div>
+        <h4>{name}</h4>
+        <h5>
+          Origin:
+          {' '}
+          {origin}
+        </h5>
+        <h6>{temperament}</h6>
+        <div>{description}</div>
+      </div>
+    ),
+  );
 
   return (
     <S.Container>
@@ -25,13 +43,7 @@ export default function SingleCatContainer(props) {
         <Button onClick={handleBack}>Back</Button>
       </S.BackButtonContainer>
       <S.Image src={image} alt=" " />
-      <S.InformationContainer>
-        <h4>
-          {breeds.map((breed) => (
-            <div key={breed.name}>{breed.name}</div>
-          ))}
-        </h4>
-      </S.InformationContainer>
+      <S.InformationContainer>{breedInformation}</S.InformationContainer>
     </S.Container>
   );
 }

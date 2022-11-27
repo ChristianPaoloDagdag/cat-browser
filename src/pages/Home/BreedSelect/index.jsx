@@ -11,8 +11,8 @@ export default function BreedSelect(props) {
   const {
     breedList,
     selectBreed,
-    setSelectBreed,
     setAlertBannerOpen,
+    setSelectBreed,
   } = useContext(Context);
 
   /* Save the selected breed for rendering */

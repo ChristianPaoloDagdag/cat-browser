@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 50px;
-  gap: 15px;
-  flex-direction: column;
-  display: flex;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 50px;
 `;
 
 export const CatListContainer = styled.div`
-  row-gap: 30px;
-  grid-template-columns: repeat(1, 1fr);
-  display: grid;
   column-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 30px;
 
   @media ${(props) => props.theme.device.small} {
     grid-template-columns: repeat(2, 1fr);

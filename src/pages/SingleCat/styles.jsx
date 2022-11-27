@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding 25px; 15px;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  padding 25px; 15px;
 `;
 
 export default Container;

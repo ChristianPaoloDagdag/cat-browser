@@ -2,23 +2,23 @@ import styled from 'styled-components';
 import Card from 'react-bootstrap/Card';
 
 export const Container = styled(Card)`
-  width: 225px;
-  flex-direction: column;
-  display: flex;
-  background-color: ${(props) => props.theme.color.offWhite};
   align-items: center;
+  background-color: ${(props) => props.theme.color.offWhite};
+  display: flex;
+  flex-direction: column;
+  width: 225px;
 `;
 
 export const Image = styled.img`
-  width: 225px;
-  height: 225px;
-  border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 225px;
+  width: 225px;
 `;
 
 export const ViewDetailsButtonContainer = styled.div`
-  justify-content: center;
-  height: 70px;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 70px;
+  justify-content: center;
 `;
