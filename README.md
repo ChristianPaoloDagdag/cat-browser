@@ -13,7 +13,7 @@ An responsive web application where you can browse photos of cats and read infor
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-Create a .env file inside the root folder, copy the .env content from the sent email then paste it in the .env file.
+Create a `.env` file inside the root folder, copy the `.env variables` from the email sent then paste it in the `.env` file.
 
 Installation:
 
