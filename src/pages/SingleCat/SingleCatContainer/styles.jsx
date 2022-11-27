@@ -5,7 +5,7 @@ export const Container = styled(Card)`
   background-color: ${(props) => props.theme.color.offWhite};
   display: flex;
   flex-direction: column;
-  width: 1100px;
+  max-width: 1100px;
 `;
 
 export const BackButtonContainer = styled.div`
@@ -16,7 +16,7 @@ export const BackButtonContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 1100px;
+  max-width: 1100px;
 `;
 
 export const InformationContainer = styled.div`
