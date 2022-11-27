@@ -73,14 +73,14 @@ export default function Home() {
   );
 
   /* Shows and hides the Alert Banner */
-  const hideAlertBanner = alertBannerOpen === true && <AlertBanner />;
+  const showAlertBanner = alertBannerOpen === true && <AlertBanner />;
 
   return (
     <S.Container>
-      <h1>Cat Browser</h1>
+      <h1>Cat Browser 🐱</h1>
       <h5>Select a Breed</h5>
       <BreedSelect setItemLimit={setItemLimit} />
-      {hideAlertBanner}
+      {showAlertBanner}
       {catListAvailability}
       {showLoadMore}
     </S.Container>

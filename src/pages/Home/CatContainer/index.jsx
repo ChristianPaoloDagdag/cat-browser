@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import * as S from './styles';
@@ -9,6 +9,8 @@ export default function CatContainer(props) {
 
   const navigate = useNavigate();
 
+  const [loaded, setLoaded] = useState(false);
+
   /* Reroute the user to the single cat page, pass information, no need for another query */
   const handleViewDetails = (catInformation) => {
     navigate(routes.SINGLE_CAT, {
@@ -16,9 +18,22 @@ export default function CatContainer(props) {
     });
   };
 
+  /* Shows image when done loading */
+  const handleShowImage = loaded ? 'loaded' : 'notLoaded';
+
+  /* Shows loading when image is not done loading */
+  const handleShowLoading = loaded ? 'loading' : 'notLoading';
+
   return (
     <S.Container>
-      <S.Image src={cat.url} key={cat.id} alt=" " />
+      <S.Loading className={handleShowLoading} />
+      <S.Image
+        src={cat.url}
+        key={cat.id}
+        onLoad={() => setLoaded(true)}
+        className={handleShowImage}
+        alt=" "
+      />
       <S.ViewDetailsButtonContainer>
         <Button
           onClick={() => {
