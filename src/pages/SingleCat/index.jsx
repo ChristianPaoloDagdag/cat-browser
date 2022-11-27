@@ -9,5 +9,9 @@ export default function SingleCat() {
   /* Get catInformation from handleView */
   const { breeds, url } = location.state.catInformation;
 
-  return <Container><SingleCatContainer image={url} breeds={breeds} /></Container>;
+  return (
+    <Container>
+      <SingleCatContainer image={url} breeds={breeds} />
+    </Container>
+  );
 }

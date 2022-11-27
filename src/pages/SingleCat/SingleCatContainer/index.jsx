@@ -8,15 +8,17 @@ import { Context } from '../../../context/default';
 export default function SingleCatContainer(props) {
   const { breeds, image } = props;
 
-  const { selectBreed, setSelectBreed } = useContext(Context);
+  const { setSelectBreed } = useContext(Context);
 
   const navigate = useNavigate();
 
+  /* Handles when the back button is clicked, pass the breed id */
   const handleBack = () => {
-    setSelectBreed(selectBreed);
+    setSelectBreed(breeds[0].id);
     navigate(routes.HOME);
   };
 
+  /* Return the breed information */
   const breedInformation = breeds.map(
     ({
       description,
@@ -24,7 +26,7 @@ export default function SingleCatContainer(props) {
       origin,
       temperament,
     }) => (
-      <div>
+      <div key={name}>
         <h4>{name}</h4>
         <h5>
           Origin:

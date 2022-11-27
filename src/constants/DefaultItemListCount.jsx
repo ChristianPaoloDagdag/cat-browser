@@ -1,3 +1,3 @@
-const DefaultItemListCount = 8;
+const DefaultItemListCount = 12;
 
 export default DefaultItemListCount;
