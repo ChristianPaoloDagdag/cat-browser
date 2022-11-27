@@ -16,5 +16,7 @@ export default function SingleCat() {
   } = location.state.catInformation;
   console.log(breeds, height, id, url, width);
 
-  return <Container><SingleCatContainer image={url} /></Container>;
+  console.log('breeds single cat', breeds);
+
+  return <Container><SingleCatContainer image={url} breeds={breeds} /></Container>;
 }

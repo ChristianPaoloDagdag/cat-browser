@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 
 export const Container = styled(Card)`
   width: 1100px;
-  height: 1300px;
   flex-direction: column;
   display: flex;
   background-color: ${(props) => props.theme.color.offWhite};
@@ -18,4 +17,12 @@ export const BackButtonContainer = styled.div`
 
 export const Image = styled.img`
   width: 1100px;
+`;
+
+export const InformationContainer = styled.div`
+  padding: 20px 15px;
+  height: 224px;
+  flex-direction: column;
+  display: flex;
+  background-color: pink;
 `;
