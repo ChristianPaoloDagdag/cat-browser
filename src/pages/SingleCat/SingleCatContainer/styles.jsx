@@ -16,7 +16,7 @@ export const BackButtonContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  max-width: 1100px;
+  width: 100%;
 `;
 
 export const InformationContainer = styled.div`
