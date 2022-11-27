@@ -5,6 +5,7 @@ import routes from './constants/routes';
 import { Context } from './context/default';
 import Home from './pages/Home';
 import SingleCat from './pages/SingleCat';
+import PageNotFound from './pages/PageNotFound';
 
 export default function App() {
   const { setBreedList, setAlertBannerOpen } = useContext(Context);
@@ -35,6 +36,7 @@ export default function App() {
       <Routes>
         <Route path={routes.HOME} element={<Home />} />
         <Route path={routes.SINGLE_CAT} element={<SingleCat />} />
+        <Route path={routes.PAGE_NOT_FOUND} element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
