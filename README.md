@@ -13,7 +13,12 @@ An responsive web application where you can browse photos of cats and read infor
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-Create a `.env` file inside the root folder, copy the `.env variables` from the email sent then paste it in the `.env` file.
+Create a `.env` file inside the root folder, copy the code below, then paste it in the `.env` file.
+
+# CODE START
+REACT_APP_API_ROUTE = "https://api.thecatapi.com/v1/"
+REACT_APP_API_KEY = "live_mKivCdU1osOUU4Aqxi09d4wBh9FVVjWTXtaljxoupnRGhbGgcnlwuYBOOFarV9pN"
+# CODE END
 
 Installation:
 
