@@ -18,7 +18,6 @@ Create a `.env` file inside the root folder, copy the code below, then paste it 
 # CODE START
 REACT_APP_API_ROUTE = "https://api.thecatapi.com/v1/"
 REACT_APP_API_KEY = "live_mKivCdU1osOUU4Aqxi09d4wBh9FVVjWTXtaljxoupnRGhbGgcnlwuYBOOFarV9pN"
-# CODE END
 
 Installation:
 
